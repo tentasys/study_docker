@@ -1,0 +1,23 @@
+#version: '3'
+services:
+  ghost:
+    image: ghost:latest
+    volumes:
+      - ./ghost/content:/var/lib/ghost/content
+    ports: 
+      - "60000:2368"
+    restart: always
+    environment: 
+     url: http://localhost:60000
+#     database__client: mysql
+#     database__connection__user: admin
+#     database__connection__password: 1234
+#     database__connection__database: ghost
+#  db:
+#    image: mysql:5.7
+#    restart: always
+#    environment: 
+#      MYSQL_ROOT_PASSWORD: 1234
+#      MYSQL_DATABASE: ghost
+#      MYSQL_USER: admin
+#      MYSQL_PASSWORD: 1234
